@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProbeMQTT.View.ConnectionListPage"
+             Title="Saved Connections">
+    <ContentPage.Content>
+        <StackLayout Padding="8">
+            <ScrollView>
+                <ListView
+                    x:Name="ConnectionList"
+                    ItemsSource="{Binding ConnectionList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Delete Connection" Clicked="ConnectionList_DeleteItem" CommandParameter="{Binding .}">
+                                    </MenuItem>
+                                </ViewCell.ContextActions>
+                                <Label Text="{Binding ClientId}" HorizontalTextAlignment="Center" VerticalOptions="Center" Font="Roboto Medium" TextColor="Black" FontSize="18"></Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Button Text="Add New Connection" Clicked="Add_New_Connection_Clicked" VerticalOptions="EndAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

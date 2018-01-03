@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProbeMQTT.View.NavDrawer"
+             Title="Drawer"
+             >
+    <ContentPage.Content >
+        <StackLayout>
+            <!--<Grid HeightRequest="128" BackgroundColor="SeaGreen">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                <BoxView BackgroundColor="Azure"></BoxView>-->
+            <StackLayout BackgroundColor="#42A5F5" HeightRequest="96">
+                <Label Text="MQTT Cloud Tester" TextColor="White" Margin="0,32,0,0" HorizontalOptions="Center" FontSize="Large"></Label>
+            </StackLayout>
+            <!--</Grid>-->
+            <ListView
+                ItemsSource="{Binding NavDrawerItems}"
+                SeparatorVisibility="None"
+                x:Name="menuList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="48"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="56"></ColumnDefinition>
+                                    <ColumnDefinition ></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Margin="6" Grid.Row="0" Grid.Column="0" Aspect="AspectFit" Source="{Binding ImageSource}" ></Image>
+                                <!--<BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="#42A5F5" ></BoxView>-->
+                                <Label Margin="12,0,0,0" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" Text="{Binding Label}" Font="Roboto Bold" FontAttributes="Bold" TextColor="Gray"  FontSize="16"></Label>
+                            </Grid>
+                            <!--<StackLayout Orientation="Horizontal" Padding="16">
+                                <Image WidthRequest="*3" Aspect="AspectFit" Source="{Binding ImageSource}"></Image>
+                                <Label WidthRequest="*1" Text="{Binding Label}" HorizontalOptions="Center"></Label>
+                            </StackLayout>-->
+                        </ViewCell>
+                        <!--<ImageCell ImageSource="{Binding ImageSource}" Text="{Binding Label}" TextColor="Black"></ImageCell>-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

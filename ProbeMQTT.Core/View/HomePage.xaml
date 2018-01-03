@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProbeMQTT.View.HomePage"
+             Title="MQTT Sample"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="16">
+            <Label Text="Welcome to MQTT Sample App" HorizontalOptions="Center" FontSize="Large"/>
+            <Label Text="Light IoT cloud tester " HorizontalOptions="CenterAndExpand"/>
+            <Grid>
+                <Grid.RowDefinitions></Grid.RowDefinitions>
+                <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
+            </Grid>
+            <Button Text="Get Started" Clicked="Get_Started_Button_Click"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

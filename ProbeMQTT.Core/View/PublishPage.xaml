@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProbeMQTT.View.PublishPage"
+             Title="Publish">
+    <ContentPage.Content>
+        <StackLayout Padding="16">
+            <StackLayout>
+                <Grid x:Name="publishGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" VerticalOptions="Center" Text="Topic :"></Label>
+                    <Entry Grid.Row="0" Grid.Column="1" Placeholder="/sample/topic" Text="{Binding Topic}"></Entry>
+                    <Label Grid.Row="1" Grid.Column="0" VerticalOptions="Center" Text="Message :"></Label>
+                    <Entry Grid.Row="1" Grid.Column="1" Placeholder="Your message here.." Text="{Binding Message}"></Entry>
+                    <Label Grid.Row="2" Grid.Column="0" VerticalOptions="Center" Text="QoS :"></Label>
+                    <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" >
+                        <Picker x:Name="QoSPicker" SelectedItem="{Binding QoS}">
+                            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>0</x:String>
+                                    <x:String>1</x:String>
+                                    <x:String>2</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Label Text="Clean Session" VerticalOptions="Center" HorizontalOptions="EndAndExpand"></Label>
+                        <Switch HorizontalOptions="End"></Switch>
+                    </StackLayout>
+                </Grid>
+                <Button Text="Publish" x:Name="PublishButton"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

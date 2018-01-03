@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProbeMQTT.View.ConnectionPage"
+             Title="Connection">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="General" Margin="16"/>
+                <Grid Padding="16,0,16,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48"></RowDefinition>
+                        <RowDefinition Height="48"></RowDefinition>
+                        <RowDefinition Height="48"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="URI :" 
+                           FontSize="Medium" 
+                           HorizontalOptions="StartAndExpand" 
+                           VerticalOptions="Center"
+                           />
+
+                    <Label Grid.Row="1" Grid.Column="0" 
+                           Text="ClientID :" 
+                           FontSize="Medium" 
+                           HorizontalOptions="StartAndExpand" 
+                           VerticalOptions="Center"
+                           />
+
+                    <Label Grid.Row="2" Grid.Column="0" 
+                           Text="Port :" 
+                           FontSize="Medium" 
+                           HorizontalOptions="StartAndExpand" 
+                           VerticalOptions="Center"
+                           />
+
+                    <Entry x:Name="UriEntry"
+                           Grid.Row="0" Grid.Column="1" 
+                           Placeholder="Please Enter URI" 
+                           PlaceholderColor="LightGray"
+                           Text="{Binding Uri}"/>
+
+                    <Entry x:Name="ClientIDEntry"
+                           Grid.Row="1" Grid.Column="1" 
+                           Placeholder="Please Enter ClientID" 
+                           PlaceholderColor="LightGray"
+                           Text="{Binding ClientID}"/>
+
+                    <Entry x:Name="PortEntry"
+                           Grid.Row="2" Grid.Column="1" 
+                           Placeholder="Enter Port Number" 
+                           PlaceholderColor="LightGray"
+                           Keyboard="Numeric"
+                           Text="{Binding Port}"/>
+                </Grid>
+
+                <Label Text="Advanced" Margin="16"/>
+
+                <Grid Padding="16,0,16,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="48"></RowDefinition>
+                        <RowDefinition Height="48"></RowDefinition>
+                        <RowDefinition Height="48"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition  Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="User Name :" 
+                           FontSize="Medium" 
+                           HorizontalOptions="StartAndExpand" 
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" 
+                           Text="Password :" 
+                           FontSize="Medium" 
+                           HorizontalOptions="StartAndExpand" 
+                           VerticalOptions="Center"/>
+
+                    <Entry x:Name="UserNameEntry"
+                           Grid.Row="0" Grid.Column="1" 
+                           Placeholder="Please Enter URI" 
+                           PlaceholderColor="LightGray"
+                           Text="{Binding UserName}"/>
+
+                    <Entry x:Name="PasswordEntry"
+                           Grid.Row="1" Grid.Column="1" 
+                           Placeholder="Please Enter ClientID" 
+                           PlaceholderColor="LightGray"
+                           IsPassword="True"
+                           Text="{Binding Password}"/>
+
+                </Grid>
+
+                <Button Text="Save" Margin="16" x:Name="SaveButton"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
