@@ -87,9 +87,13 @@ namespace ProbeMQTT.View
 
         private void SubscriptionList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var model = e.SelectedItem as SubscriptionModel;
-            Navigation.PushPopupAsync(new SubscribePopUp(model));
-
+            if (e.SelectedItem != null)
+            { 
+                var model = e.SelectedItem as SubscriptionModel;
+                Navigation.PushPopupAsync(new SubscribePopUp(model));
+                SubscriptionList.SelectedItem = null;
+            }
+            
         }
 
     }

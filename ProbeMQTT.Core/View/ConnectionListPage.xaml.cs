@@ -23,10 +23,14 @@ namespace ProbeMQTT.View
 
         private void ConnectionList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var connection = e.SelectedItem as Connection;
-            var pubsubPage = new PubSubPage(connection);
-            //Navigation.PopAsync();
-            Navigation.PushAsync(pubsubPage);
+            if (e.SelectedItem != null)
+            { 
+                var connection = e.SelectedItem as Connection;
+                var pubsubPage = new PubSubPage(connection);
+                //Navigation.PopAsync();
+                Navigation.PushAsync(pubsubPage);
+            }
+            ConnectionList.SelectedItem = null;
         }
 
         private void ConnectionList_DeleteItem(object sender, EventArgs e)
